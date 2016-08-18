@@ -1,0 +1,14 @@
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\bin\Debug\ImageProcessing.exe.config
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\bin\Debug\ImageProcessing.exe
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\bin\Debug\ImageProcessing.pdb
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing.csprojResolveAssemblyReference.cache
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\MainWindow.g.cs
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\App.g.cs
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing_MarkupCompile.cache
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing_MarkupCompile.lref
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\MainWindow.baml
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing.g.resources
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing.Properties.Resources.resources
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing.csproj.GenerateResource.Cache
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing.exe
+D:\Desenvolvimento\Team Foundation Server\Processamento-de-Imagens\ProcessamentoImagens\ImageProcessing\obj\Debug\ImageProcessing.pdb
