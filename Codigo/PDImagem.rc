@@ -1,0 +1,1223 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\PDImagem.rc2""  // non-App Studio edited resources\r\n"
+    "\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "#include ""afxprint.rc""  // printing/print preview resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "RES\\PDIMAGEM.ICO"
+IDR_PDIMAGTYPE          ICON                    "RES\\PDIMADOC.ICO"
+IDI_ICON2               ICON                    "RES\\ICON2.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "RES\\TOOLBAR.BMP"
+TRESU                   BITMAP                  "RES\\TRES.BMP"
+ROMBUSU                 BITMAP                  "RES\\ROMBUS.BMP"
+LINHAVU                 BITMAP                  "RES\\LINHAV.BMP"
+LINHAHU                 BITMAP                  "RES\\LINHAH.BMP"
+CRUZU                   BITMAP                  "RES\\CRUZ.BMP"
+IDB_BMPHS               BITMAP                  "RES\\BMPHS.BMP"
+IDB_BMPHI               BITMAP                  "RES\\BMPHI.BMP"
+IDB_BMPSI               BITMAP                  "RES\\BMPSI.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "A",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FATORZOOM_INTERP DIALOGEX 0, 0, 120, 70
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fator de Ampliação"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,63,17,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,63,38,50,14
+    EDITTEXT        IDC_EDIT_FAT_INTERP,15,27,40,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_FATORZOOM_INTERP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 113
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "PDImagem - Ambiente Processamento de Imagens"
+    IDR_PDIMAGTYPE          "\nPDImagem\nPDImagem Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "PDImagem - Ambiente de Processamento de Imagens"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Cria uma nova imagem"
+    ID_FILE_OPEN            "Abre uma imagem existente"
+    ID_FILE_CLOSE           "Fecha a imagem ativa"
+    ID_FILE_SAVE            "Salva a imagem ativa"
+    ID_FILE_SAVE_AS         "Salva a imagem ativa com novo nome"
+    ID_FILE_PAGE_SETUP      "Change the printing options"
+    ID_FILE_PRINT_SETUP     "Troca a impressara e opcoes de impressao"
+    ID_FILE_PRINT           "Imprime a imagem ativa"
+    ID_FILE_PRINT_PREVIEW   "Mostra paginas para a impressao"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Mostra informacoes sobre este programa"
+    ID_APP_EXIT             "Encerra o PDIMAGEM"
+    ID_HELP_INDEX           "Lista de topicos da ajuda"
+    ID_HELP_USING           "Mostra como utilizar a ajuda"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows"
+    ID_HELP                 "Display help for current task or command"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Abre este documento"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane"
+    ID_PREV_PANE            "Switch back to the previous window pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Abre uma nova janela para a imagem ativa"
+    ID_WINDOW_ARRANGE       "Ajusta icones dentro da janela"
+    ID_WINDOW_CASCADE       "Mostra as janelas em cascata"
+    ID_WINDOW_TILE_HORZ     "Mostra as janelas lado a lado"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles"
+    ID_WINDOW_SPLIT         "Split the active window into panes"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection"
+    ID_EDIT_CLEAR_ALL       "Erase everything"
+    ID_EDIT_COPY            "Copia a selecao para a area de transferencia"
+    ID_EDIT_CUT             "Corta a selecao e coloca na area de transferencia"
+    ID_EDIT_FIND            "Find the specified text"
+    ID_EDIT_PASTE           "Insere o conteudo da area de transferencia"
+    ID_EDIT_REPEAT          "Repeat the last action"
+    ID_EDIT_REPLACE         "Replace specific text with different text"
+    ID_EDIT_SELECT_ALL      "Select the entire document"
+    ID_EDIT_UNDO            "Desfaz o ultimo comando"
+    ID_EDIT_REDO            "Redo the previously undone action"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Mostra o esconde a barra de ferramentas"
+    ID_VIEW_STATUS_BAR      "Mostra ou esconde a barra de mensagens"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_IMAGEM_HISTOGRAMA    "Gera o histograma da imagem ativa"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Portuguese (Brazil) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PTB)
+#ifdef _WIN32
+LANGUAGE LANG_PORTUGUESE, SUBLANG_PORTUGUESE_BRAZILIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  34, 22, 217, 73
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PDIMAGEM"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC4,11,17,20,20
+    LTEXT           "PDImagem Application Version 2.0",IDC_STATIC1,40,10,119,8
+    LTEXT           "Copyright © 2001",IDC_STATIC2,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+    LTEXT           "Mstdo David Menoti Gomes   Prof. Alceu de Souza Britto Jr. Prof. Jacques Facon",IDC_STATIC,40,40,107,23
+END
+
+IDD_LIMIARMANUAL DIALOG  0, 240, 273, 102
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_LIMIAR,29,85,36,75,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "&Aplica",IDC_TESTAR,120,85,46,14
+    PUSHBUTTON      "&OK",IDOK,172,85,46,14
+    PUSHBUTTON      "&Cancela",IDCANCEL,224,85,46,14
+    CONTROL         "",IDC_IMAGEM,"Button",BS_OWNERDRAW | WS_TABSTOP,2,2,135,81
+    CONTROL         "",IDC_IMAGEMR,"Button",BS_OWNERDRAW | WS_TABSTOP,139,2,132,81
+    LTEXT           "Limiar",IDC_STATIC,5,85,21,9
+END
+
+IDD_ELEMESTR DIALOG  0, 0, 203, 113
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Elemento Estruturante"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Cruz",IDC_RADIOCR,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,35,6,35,10
+    CONTROL         "Linha Horizontal",IDC_RADIOLH,"Button",BS_AUTORADIOBUTTON,34,26,66,10
+    CONTROL         "Linha Vertical",IDC_RADIOLV,"Button",BS_AUTORADIOBUTTON,34,47,62,10
+    CONTROL         "Quadrado",IDC_RADIOQU,"Button",BS_AUTORADIOBUTTON,34,67,58,10
+    CONTROL         "Rombus",IDC_RADIORB,"Button",BS_AUTORADIOBUTTON,35,89,48,10
+    EDITTEXT        IDC_ITERAR,180,10,14,13,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Normal",IDC_NORMAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,146,37,35,10
+    CONTROL         "Condicional",IDC_CONDICIONAL,"Button",BS_AUTORADIOBUTTON,146,47,52,10
+    COMBOBOX        IDC_MASCARA,98,73,100,55,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDC_OK,104,95,47,14,WS_GROUP
+    PUSHBUTTON      "Cancela",IDCANCEL,153,95,47,14,NOT WS_TABSTOP
+    GROUPBOX        "Iteracoes",IDC_TXITERAR,141,4,59,21
+    GROUPBOX        "Tipo Operacao",IDC_TXOPERACAO,141,25,59,38
+    CONTROL         "CRUZ",IDC_CRUZ,"Button",BS_OWNERDRAW | WS_DISABLED | WS_TABSTOP,5,3,21,18
+    CONTROL         "TRES",IDC_TRES,"Button",BS_OWNERDRAW | WS_DISABLED | WS_TABSTOP,5,66,21,18
+    CONTROL         "LINHAH",IDC_LINHAH,"Button",BS_OWNERDRAW | WS_DISABLED | WS_TABSTOP,5,24,21,18
+    CONTROL         "LINHAV",IDC_LINHAV,"Button",BS_OWNERDRAW | WS_DISABLED | WS_TABSTOP,5,45,21,18
+    CONTROL         "ROMBUS",IDC_ROMBUS,"Button",BS_OWNERDRAW | WS_DISABLED | WS_TABSTOP,5,89,21,18
+    GROUPBOX        "Mascara",IDC_TXMASCARA,94,62,107,28
+END
+
+IDD_OPLOGICA DIALOG  0, 0, 254, 150
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Operacoes Logicas"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_IMAGEMA,11,12,111,67,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_IMAGEMB,134,12,107,70,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Operacoes",IDC_STATIC,203,28,48,74
+    CONTROL         "OR",IDC_OR,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,206,41,35,10
+    CONTROL         "AND",IDC_AND,"Button",BS_AUTORADIOBUTTON,206,53,35,10
+    CONTROL         "XOR",IDC_XOR,"Button",BS_AUTORADIOBUTTON,206,65,31,10
+    CONTROL         "NAND",IDC_NAND,"Button",BS_AUTORADIOBUTTON,206,78,35,10
+    CONTROL         "NOR",IDC_NOR,"Button",BS_AUTORADIOBUTTON,206,90,35,10
+    DEFPUSHBUTTON   "Visualizar",IDC_VISUALIZA,202,104,50,14,WS_GROUP
+    PUSHBUTTON      "OK",IDOK,202,119,50,14
+    PUSHBUTTON      "Cancela",IDCANCEL,202,134,50,14
+    GROUPBOX        "Imagens ",IDC_STATIC,2,0,249,28
+    CONTROL         "",IDC_AREATES,"Button",BS_OWNERDRAW | WS_TABSTOP,3,32,197,117
+END
+
+IDD_INFO DIALOG  0, 0, 141, 191
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Informacoes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,45,175,50,14
+    CONTROL         "ImagemEx",IDC_IMAGEMEX,"Button",BS_OWNERDRAW | WS_DISABLED,1,2,139,89
+    LTEXT           "Imagem:",IDC_STATIC,5,100,45,8
+    LTEXT           "Altura:",IDC_STATIC,5,110,45,8
+    LTEXT           "Largura:",IDC_STATIC,5,120,45,8
+    LTEXT           "Bits Por Pixel:",IDC_STATIC,5,140,45,8
+    LTEXT           "Planos:",IDC_STATIC,5,130,45,8
+    LTEXT           "Cores: ",IDC_STATIC,5,150,45,8
+    LTEXT           "Tamanho:",IDC_STATIC,5,160,45,8
+    LTEXT           "Titulo",IDC_TITULO,55,100,80,8
+    LTEXT           "Altura",IDC_ALTURA,55,110,80,8
+    LTEXT           "Largura",IDC_LARGURA,55,120,80,8
+    LTEXT           "Planos",IDC_PLANOS,55,130,80,8
+    LTEXT           "Bps",IDC_BPS,55,140,80,8
+    LTEXT           "Cores",IDC_CORES,55,150,80,8
+    LTEXT           "Tamanho",IDC_TAMANHO,55,160,80,8
+END
+
+IDD_HISTOGRAMA DIALOG  520, 0, 270, 198
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "RGB",IDC_RGB,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,7,184,35,10
+    CONTROL         "HSI",IDC_HSI,"Button",BS_AUTORADIOBUTTON,42,184,35,10
+    CONTROL         "R",IDC_VERMELHO,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,94,184,20,10
+    CONTROL         "G",IDC_VERDE,"Button",BS_AUTOCHECKBOX,119,184,17,10
+    CONTROL         "B",IDC_AZUL,"Button",BS_AUTOCHECKBOX,144,184,18,10
+    DEFPUSHBUTTON   "OK",IDOK,218,179,48,14,WS_GROUP
+    GROUPBOX        "Modelo",IDC_STATIC,2,173,78,24,WS_GROUP | WS_TABSTOP
+    GROUPBOX        "Canais",IDC_STATIC,89,173,75,24,WS_GROUP | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,0,159,270,14
+    CONTROL         "",IDC_AREA_DESENHO,"Button",BS_OWNERDRAW | WS_DISABLED,2,8,267,154
+    LTEXT           "Histograma",IDC_STATIC,6,0,50,8
+    LTEXT           "000...........032...........064..........096.........128.........160.........192.........224..........255",IDC_ESCALA,3,164,267,8,NOT WS_GROUP
+END
+
+IDD_FATORZOOM DIALOG  0, 0, 127, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Fator de Zoom",IDC_STATIC,7,11,68,53
+    EDITTEXT        IDC_ZOOMH,50,25,17,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ZOOML,50,45,17,13,ES_AUTOHSCROLL
+    LTEXT           "Altura:",IDC_STATIC,14,29,31,12
+    DEFPUSHBUTTON   "OK",IDOK,80,15,44,14
+    PUSHBUTTON      "Cancel",IDCANCEL,80,35,44,14
+    LTEXT           "Largura:",IDC_STATIC,13,47,32,12
+END
+
+IDD_PR_DISTANCIA DIALOG  0, 0, 237, 151
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Informacoes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,95,130,50,14
+    CONTROL         "ImagemPadrão",IDC_IMAGEM_PADRAO,"Button",BS_OWNERDRAW | WS_DISABLED,5,5,105,85
+    CTEXT           "Titulo",IDC_TITULO_PADRAO,15,95,80,8
+    CONTROL         "ImagemTeste",IDC_IMAGEM_TESTE,"Button",BS_OWNERDRAW | WS_DISABLED,125,5,100,85
+    CTEXT           "Titulo",IDC_TITULO_TESTE,135,95,80,8
+    LTEXT           "Distância:",IDC_STATIC,85,110,30,8
+    LTEXT           "Distância",IDC_DISTANCIA,125,110,50,8
+END
+
+IDD_DLG_COOCORRENCIA DIALOG  0, 0, 234, 135
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Matriz de Co-Ocorrência"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Mostra",ID_MOSTRA,177,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,177,24,50,14
+    COMBOBOX        IDC_COMBO1,7,7,92,13,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ED00,39,48,35,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED01,79,48,35,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED10,39,66,35,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED11,80,66,35,14,ES_AUTOHSCROLL
+END
+
+ID_APRIMORANITIDEZCALCULO3 DIALOGEX 0, 0, 206, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aprimoramento de Nitidez - Cálculo 3"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,53,71,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,124,70,50,14
+    EDITTEXT        IDC_EDIT1,84,28,40,14,ES_AUTOHSCROLL
+    LTEXT           "Parâmetro: ",IDC_STATIC,39,31,39,8
+END
+
+ID_APRIMORANITIDEZCALCULO2 DIALOGEX 0, 0, 183, 101
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aprimoramento de Nitidez - Cálculo 2"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,39,71,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,101,71,50,14
+    LTEXT           "Parâmetro:",IDC_STATIC,34,33,37,8
+    EDITTEXT        IDC_EDIT1,81,28,40,14,ES_AUTOHSCROLL
+END
+
+ID_APRIMORANITIDEZCALCULO1 DIALOGEX 0, 0, 194, 98
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aprimoramento de Nitidez - Cálculo 1"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,124,62,50,14
+    EDITTEXT        IDC_EDIT1,79,30,40,14,ES_AUTOHSCROLL
+    LTEXT           "Parâmetro:",IDC_STATIC,35,33,40,8
+    PUSHBUTTON      "Ok",ID_OK,55,62,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_FATORZOOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 123
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_DLG_COOCORRENCIA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    ID_APRIMORANITIDEZCALCULO3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    ID_APRIMORANITIDEZCALCULO2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 176
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    ID_APRIMORANITIDEZCALCULO1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 187
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Arquivo"
+    BEGIN
+        MENUITEM "&Novo\tCtrl+N",               ID_FILE_NEW
+        MENUITEM "&Abrir...\tCtrl+A",           ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Configurar Impressao...",    ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Arquivo Recente",             ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Sai&r",                       ID_APP_EXIT
+    END
+    POPUP "&Visualizar"
+    BEGIN
+        MENUITEM "Barra de &Ferramentas",       ID_VIEW_TOOLBAR
+        MENUITEM "Barra de &Mensagens",         ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Aj&uda"
+    BEGIN
+        MENUITEM "&Indice",                     ID_HELP_INDEX
+        MENUITEM "&Usando Ajuda",               ID_HELP_USING
+        MENUITEM SEPARATOR
+        MENUITEM "&Sobre PDIMAGEM...",          ID_APP_ABOUT
+    END
+END
+
+IDR_PDIMAGTYPE MENU 
+BEGIN
+    POPUP "&Arquivo"
+    BEGIN
+        MENUITEM "&Novo\tCtrl+N",               ID_FILE_NEW, INACTIVE
+        MENUITEM "&Abrir...\tCtrl+A",           ID_FILE_OPEN
+        MENUITEM "&Fechar",                     ID_FILE_CLOSE
+        MENUITEM "&Salvar\tCtrl+S",             ID_FILE_SAVE
+        MENUITEM "Salvar &como...",             ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Imprimir...\tCtrl+P",        ID_FILE_PRINT
+        MENUITEM "&Visualizar Impressao",       ID_FILE_PRINT_PREVIEW
+        MENUITEM "C&onfigurar Impressao...",    ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Arquivo Recente",             ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "Sai&r",                       ID_APP_EXIT
+    END
+    POPUP "&Editar"
+    BEGIN
+        MENUITEM "&Desfazer\tAlt+Back",         ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Co&rtar\tShift+Del",          ID_EDIT_CUT
+        MENUITEM "&Copiar\tCtrl+Ins",           ID_EDIT_COPY
+        MENUITEM "Co&lar\tShift+Ins",           ID_EDIT_PASTE
+    END
+    POPUP "&Visualizar"
+    BEGIN
+        MENUITEM "Barra de &Ferramentas",       ID_VIEW_TOOLBAR
+        MENUITEM "Barra de &Mensagens",         ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Processamento em Níveis de Cinza"
+    BEGIN
+        POPUP "Histograma"
+        BEGIN
+            MENUITEM "&Histograma",                 ID_IMAGEM_HISTOGRAMA
+            MENUITEM "&Equalizacao",                ID_IMAGEM_EQUALIZACAO
+        END
+        POPUP "&Limiarizacao"
+        BEGIN
+            MENUITEM "&Otsu",                       ID_IMAGEM_LIMIARIZACAO_OTSU
+            MENUITEM "&Kittler",                    ID_IMAGEM_LIMIARIZACAO_KITTLER
+            MENUITEM "&Entropia",                   ID_IMAGEM_LIMIARIZACAO_ENTROPIA
+            MENUITEM "&Anisotropia",                ID_IMAGEM_LIMIARIZACAO_ANISOTROPIA
+            MENUITEM "&Manual",                     ID_IMAGEM_LIMIARIZACAO_MANUAL
+        END
+        POPUP "&Morfologia Binária"
+        BEGIN
+            MENUITEM "&Erosao",                     ID_MORFOLOGIA_BINARIA_EROSAO
+            MENUITEM "&Dilatacao",                  ID_MORFOLOGIA_BINARIA_DILATACAO
+            MENUITEM "&Abertura",                   ID_MORFOLOGIA_BINARIA_ABERTURA
+            MENUITEM "&Fechamento",                 ID_MORFOLOGIA_BINARIA_FECHAMENTO
+            POPUP "Detecao de &Bordas"
+            BEGIN
+                MENUITEM "&Erosao",                     ID_MORFOLOGIA_BINARIA_BORDAS_EROSAO
+                MENUITEM "&Dilatacao",                  ID_MORFOLOGIA_BINARIA_BORDAS_DILATACAO
+                MENUITEM "Di&latacao-Erosao",           ID_MORFOLOGIA_BINARIA_BORDAS_DILERO
+            END
+            MENUITEM "E&squeletizacao",             ID_MORFOLOGIA_BINARIA_ESQUELETIZACAO
+            MENUITEM "&Ultima Erosao",              ID_MORFOLOGIA_BINARIA_ULTIMAEROSAO
+        END
+        MENUITEM "Zoom In/Out",                 ID_IMAGEM_ZOOM
+        MENUITEM "&Operações Lógicas",          ID_OPERACOES_LOGICAS
+        MENUITEM "In&verte",                    ID_IMAGEM_INVERTE
+    END
+    POPUP "&Processamento em Cor"
+    BEGIN
+        POPUP "&HSV"
+        BEGIN
+            MENUITEM "&Extrair Canais",             ID_HSV_EXTRAIR_CANAIS
+            MENUITEM "Extrair Canais (&Cardani)",   ID_HSV_EXTRAIR_CANAIS_CARDANI
+            MENUITEM "&Conversão RGB para HSV     HSV para RGB", 32895
+        END
+        POPUP "&HSI"
+        BEGIN
+            MENUITEM "&Conversão RGB para HSI   HSI para RGB", ID_ESPAOSDECOR_HSI_CONVERSORGBPARAHSIHSIPARARGB
+        END
+        POPUP "XYZ"
+        BEGIN
+            MENUITEM "&Conversão RGB para XYZ    XYZ para RGB", ID_ESPACOSDECOR_XYZ
+        END
+        POPUP "&YCrCb"
+        BEGIN
+            MENUITEM "&Conversão RGB para YCrCb   YCrCb para RGB", ID_ESPAOSDECOR_YCRCB_CONVERTER_RGB_YCRCB
+            POPUP "Aprimoramento de Nitidez"
+            BEGIN
+                MENUITEM "Cálculo 1:  Imagem - Lambda*(AD)", ID_APRIMORANITIDEZCALCULO1
+                MENUITEM "Cálculo 2: Imagem + Lambda*|AD|", ID_APRIMORANITIDEZCALCULO2
+                MENUITEM "Cálculo 3: Imagem + Lambda*|AD| + Lambda*(AD-)", ID_APRIMORANITIDEZCALCULO3
+            END
+            MENUITEM "Equalização de Histograma",   ID_YCRCBEQUALIZACAO
+        END
+        POPUP "&YIQ"
+        BEGIN
+            MENUITEM "Conversão RGB para YIQ &  YIQ para RGB", ID_ESPACOSDECOR_YIQ
+            MENUITEM "Equalização YIQ",             ID_IMAGEM_EQUALIZACAO_YIQ
+            MENUITEM "Aprimoramento de Nitidez",    ID_YIQ_APRIMORAMENTODENITIDEZ
+        END
+    END
+    POPUP "&Janela"
+    BEGIN
+        MENUITEM "&Nova",                       ID_WINDOW_NEW
+        MENUITEM "&Cascata",                    ID_WINDOW_CASCADE
+        MENUITEM "&Lado a Lado",                ID_WINDOW_TILE_HORZ
+        MENUITEM "&Ajustar Icones",             ID_WINDOW_ARRANGE
+    END
+    POPUP "&Ajuda"
+    BEGIN
+        MENUITEM "&Indice",                     ID_HELP_INDEX
+        MENUITEM "&Usando Ajuda",               ID_HELP_USING
+        MENUITEM SEPARATOR
+        MENUITEM "&Sobre PDIMAGEM...",          ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LIMIARMANUAL DLGINIT
+BEGIN
+    IDC_LIMIAR, 0x403, 2, 0
+0x0030, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0031, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0032, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0033, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0034, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0035, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0036, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0037, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0038, 
+    IDC_LIMIAR, 0x403, 2, 0
+0x0039, 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3931, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3132, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3232, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3332, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3432, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3532, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3632, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3732, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3832, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3932, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3033, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3133, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3233, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3333, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3433, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3533, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3633, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3733, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3833, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3933, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3034, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3134, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3234, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3334, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3434, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3534, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3634, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3734, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3834, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3934, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3035, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3135, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3235, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3335, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3435, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3535, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3635, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3735, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3835, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3935, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3036, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3136, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3236, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3336, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3436, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3536, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3636, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3736, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3836, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3936, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3037, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3137, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3237, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3337, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3437, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3537, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3637, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3737, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3837, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3937, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3038, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3138, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3238, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3338, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3438, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3538, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3638, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3738, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3838, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3938, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3039, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3139, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3239, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3339, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3439, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3539, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3639, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3739, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3839, "\000" 
+    IDC_LIMIAR, 0x403, 3, 0
+0x3939, "\000" 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3031, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3131, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3231, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3331, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3431, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3531, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3631, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3731, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3831, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3931, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3032, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3132, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3232, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3332, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0035, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0036, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0037, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0038, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3432, 0x0039, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3532, 0x0030, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3532, 0x0031, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3532, 0x0032, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3532, 0x0033, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3532, 0x0034, 
+    IDC_LIMIAR, 0x403, 4, 0
+0x3532, 0x0035, 
+    0
+END
+
+IDD_DLG_COOCORRENCIA DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 13, 0
+0x2030, 0x202d, 0x6f4e, 0x6f72, 0x7365, 0x6574, "\000" 
+    IDC_COMBO1, 0x403, 10, 0
+0x2031, 0x202d, 0x6f4e, 0x7472, 0x0065, 
+    IDC_COMBO1, 0x403, 13, 0
+0x2032, 0x202d, 0x6f4e, 0x6472, 0x7365, 0x6574, "\000" 
+    IDC_COMBO1, 0x403, 10, 0
+0x2033, 0x202d, 0x654f, 0x7473, 0x0065, 
+    IDC_COMBO1, 0x403, 11, 0
+0x2034, 0x202d, 0x6543, 0x746e, 0x6f72, "\000" 
+    IDC_COMBO1, 0x403, 10, 0
+0x2035, 0x202d, 0x654c, 0x7473, 0x0065, 
+    IDC_COMBO1, 0x403, 13, 0
+0x2036, 0x202d, 0x7553, 0x6f64, 0x7365, 0x6574, "\000" 
+    IDC_COMBO1, 0x403, 8, 0
+0x2037, 0x202d, 0x7553, 0x006c, 
+    IDC_COMBO1, 0x403, 12, 0
+0x2038, 0x202d, 0x7553, 0x6564, 0x7473, 0x0065, 
+    0
+END
+
+#endif    // Portuguese (Brazil) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\PDImagem.rc2"  // non-App Studio edited resources
+
+#include "afxres.rc"  // Standard components
+#include "afxprint.rc"  // printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
