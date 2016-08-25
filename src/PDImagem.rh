@@ -1,0 +1,12 @@
+
+
+#define IDI_APL                 1000
+#define IDI_IMA                 1001 
+
+#define CM_TOOLLINE             203
+#define CM_TOOLPENCOLOR         204
+#define CM_TOOLBRUSHCOLOR       205
+#define CM_DRAWHISTO            301
+#define CM_HELPABOUT            401
+
+
