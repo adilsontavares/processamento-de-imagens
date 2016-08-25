@@ -1,4 +1,6 @@
-Codigo/Debug/
-Codigo/Release/
-Codigo/ipch/
-Codigo/_UpgradeReport_Files/
+src/Debug/
+src/Release/
+src/ipch/
+src/_UpgradeReport_Files/
+PDImagem.VC.db
+PDImagem.ncb
