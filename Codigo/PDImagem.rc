@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -58,8 +56,11 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "RES\\PDIMAGEM.ICO"
+
 IDR_PDIMAGTYPE          ICON                    "RES\\PDIMADOC.ICO"
+
 IDI_ICON2               ICON                    "RES\\ICON2.ICO"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -67,21 +68,30 @@ IDI_ICON2               ICON                    "RES\\ICON2.ICO"
 //
 
 IDR_MAINFRAME           BITMAP                  "RES\\TOOLBAR.BMP"
+
 TRESU                   BITMAP                  "RES\\TRES.BMP"
+
 ROMBUSU                 BITMAP                  "RES\\ROMBUS.BMP"
+
 LINHAVU                 BITMAP                  "RES\\LINHAV.BMP"
+
 LINHAHU                 BITMAP                  "RES\\LINHAH.BMP"
+
 CRUZU                   BITMAP                  "RES\\CRUZ.BMP"
+
 IDB_BMPHS               BITMAP                  "RES\\BMPHS.BMP"
+
 IDB_BMPHI               BITMAP                  "RES\\BMPHI.BMP"
+
 IDB_BMPSI               BITMAP                  "RES\\BMPSI.BMP"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Accelerator
 //
 
-IDR_MAINFRAME ACCELERATORS 
+IDR_MAINFRAME ACCELERATORS
 BEGIN
     "A",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
     "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
@@ -120,7 +130,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_FATORZOOM_INTERP, DIALOG
     BEGIN
@@ -138,20 +148,20 @@ END
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDR_MAINFRAME           "PDImagem - Ambiente Processamento de Imagens"
     IDR_PDIMAGTYPE          "\nPDImagem\nPDImagem Document"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_APP_TITLE       "PDImagem - Ambiente de Processamento de Imagens"
     AFX_IDS_IDLEMESSAGE     "For Help, press F1"
     AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_INDICATOR_EXT        "EXT"
     ID_INDICATOR_CAPS       "CAP"
@@ -161,7 +171,7 @@ BEGIN
     ID_INDICATOR_REC        "REC"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_FILE_NEW             "Cria uma nova imagem"
     ID_FILE_OPEN            "Abre uma imagem existente"
@@ -174,7 +184,7 @@ BEGIN
     ID_FILE_PRINT_PREVIEW   "Mostra paginas para a impressao"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_APP_ABOUT            "Mostra informacoes sobre este programa"
     ID_APP_EXIT             "Encerra o PDIMAGEM"
@@ -184,7 +194,7 @@ BEGIN
     ID_HELP                 "Display help for current task or command"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_FILE_MRU_FILE1       "Abre este documento"
     ID_FILE_MRU_FILE2       "Open this document"
@@ -192,13 +202,13 @@ BEGIN
     ID_FILE_MRU_FILE4       "Open this document"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_NEXT_PANE            "Switch to the next window pane"
     ID_PREV_PANE            "Switch back to the previous window pane"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_WINDOW_NEW           "Abre uma nova janela para a imagem ativa"
     ID_WINDOW_ARRANGE       "Ajusta icones dentro da janela"
@@ -208,7 +218,7 @@ BEGIN
     ID_WINDOW_SPLIT         "Split the active window into panes"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_EDIT_CLEAR           "Erase the selection"
     ID_EDIT_CLEAR_ALL       "Erase everything"
@@ -223,13 +233,13 @@ BEGIN
     ID_EDIT_REDO            "Redo the previously undone action"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_VIEW_TOOLBAR         "Mostra o esconde a barra de ferramentas"
     ID_VIEW_STATUS_BAR      "Mostra ou esconde a barra de mensagens"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_SCSIZE          "Change the window size"
     AFX_IDS_SCMOVE          "Change the window position"
@@ -240,19 +250,19 @@ BEGIN
     AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_SCRESTORE       "Restore the window to normal size"
     AFX_IDS_SCTASKLIST      "Activate Task List"
     AFX_IDS_MDICHILD        "Activate this window"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_IMAGEM_HISTOGRAMA    "Gera o histograma da imagem ativa"
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -260,17 +270,15 @@ END
 // Portuguese (Brazil) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PTB)
-#ifdef _WIN32
 LANGUAGE LANG_PORTUGUESE, SUBLANG_PORTUGUESE_BRAZILIAN
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOG  34, 22, 217, 73
+IDD_ABOUTBOX DIALOG 34, 22, 217, 73
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About PDIMAGEM"
 FONT 8, "MS Sans Serif"
@@ -282,7 +290,7 @@ BEGIN
     LTEXT           "Mstdo David Menoti Gomes   Prof. Alceu de Souza Britto Jr. Prof. Jacques Facon",IDC_STATIC,40,40,107,23
 END
 
-IDD_LIMIARMANUAL DIALOG  0, 240, 273, 102
+IDD_LIMIARMANUAL DIALOG 0, 240, 273, 102
 STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "Dialog"
 FONT 8, "MS Sans Serif"
@@ -296,7 +304,7 @@ BEGIN
     LTEXT           "Limiar",IDC_STATIC,5,85,21,9
 END
 
-IDD_ELEMESTR DIALOG  0, 0, 203, 113
+IDD_ELEMESTR DIALOG 0, 0, 203, 113
 STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "Elemento Estruturante"
 FONT 8, "MS Sans Serif"
@@ -322,7 +330,7 @@ BEGIN
     GROUPBOX        "Mascara",IDC_TXMASCARA,94,62,107,28
 END
 
-IDD_OPLOGICA DIALOG  0, 0, 254, 150
+IDD_OPLOGICA DIALOG 0, 0, 254, 150
 STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "Operacoes Logicas"
 FONT 8, "MS Sans Serif"
@@ -342,7 +350,7 @@ BEGIN
     CONTROL         "",IDC_AREATES,"Button",BS_OWNERDRAW | WS_TABSTOP,3,32,197,117
 END
 
-IDD_INFO DIALOG  0, 0, 141, 191
+IDD_INFO DIALOG 0, 0, 141, 191
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Informacoes"
 FONT 8, "MS Sans Serif"
@@ -365,7 +373,7 @@ BEGIN
     LTEXT           "Tamanho",IDC_TAMANHO,55,160,80,8
 END
 
-IDD_HISTOGRAMA DIALOG  520, 0, 270, 198
+IDD_HISTOGRAMA DIALOG 520, 0, 270, 198
 STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -383,7 +391,7 @@ BEGIN
     LTEXT           "000...........032...........064..........096.........128.........160.........192.........224..........255",IDC_ESCALA,3,164,267,8,NOT WS_GROUP
 END
 
-IDD_FATORZOOM DIALOG  0, 0, 127, 71
+IDD_FATORZOOM DIALOG 0, 0, 127, 71
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Dialog"
 FONT 8, "MS Sans Serif"
@@ -397,7 +405,7 @@ BEGIN
     LTEXT           "Largura:",IDC_STATIC,13,47,32,12
 END
 
-IDD_PR_DISTANCIA DIALOG  0, 0, 237, 151
+IDD_PR_DISTANCIA DIALOG 0, 0, 237, 151
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Informacoes"
 FONT 8, "MS Sans Serif"
@@ -411,7 +419,7 @@ BEGIN
     LTEXT           "Distância",IDC_DISTANCIA,125,110,50,8
 END
 
-IDD_DLG_COOCORRENCIA DIALOG  0, 0, 234, 135
+IDD_DLG_COOCORRENCIA DIALOG 0, 0, 234, 135
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Matriz de Co-Ocorrência"
 FONT 8, "MS Sans Serif"
@@ -458,6 +466,17 @@ BEGIN
     PUSHBUTTON      "Ok",ID_OK,55,62,50,14
 END
 
+IDD_ADICIONAR DIALOGEX 0, 0, 169, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,58,25,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,112,25,50,14
+    EDITTEXT        IDC_VALOR,63,7,99,14,ES_AUTOHSCROLL
+    LTEXT           "Valor (0 - 255):",IDC_STATIC,7,10,50,8
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -465,7 +484,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_FATORZOOM, DIALOG
     BEGIN
@@ -506,6 +525,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 90
     END
+
+    IDD_ADICIONAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -515,7 +542,7 @@ END
 // Menu
 //
 
-IDR_MAINFRAME MENU 
+IDR_MAINFRAME MENU
 BEGIN
     POPUP "&Arquivo"
     BEGIN
@@ -542,7 +569,7 @@ BEGIN
     END
 END
 
-IDR_PDIMAGTYPE MENU 
+IDR_PDIMAGTYPE MENU
 BEGIN
     POPUP "&Arquivo"
     BEGIN
@@ -640,6 +667,10 @@ BEGIN
             MENUITEM "Equalização YIQ",             ID_IMAGEM_EQUALIZACAO_YIQ
             MENUITEM "Aprimoramento de Nitidez",    ID_YIQ_APRIMORAMENTODENITIDEZ
         END
+    END
+    POPUP "Adilson Tavares"
+    BEGIN
+        MENUITEM "Adicionar",                   ID_ADILSONTAVARES_ADICIONAR
     END
     POPUP "&Janela"
     BEGIN
@@ -1200,6 +1231,17 @@ BEGIN
 0x2037, 0x202d, 0x7553, 0x006c, 
     IDC_COMBO1, 0x403, 12, 0
 0x2038, 0x202d, 0x7553, 0x6564, 0x7473, 0x0065, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ADICIONAR AFX_DIALOG_LAYOUT
+BEGIN
     0
 END
 

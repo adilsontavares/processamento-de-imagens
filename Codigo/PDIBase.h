@@ -148,6 +148,10 @@ public:
 	void				AprimoraNitidezYCrCbCalculo2(double P2);
 	void				AprimoraNitidezYCrCbCalculo3(double P3);
 
+	// Novos algoritmos
+
+	void				Adiciona(int valor);
+
 //	void				LineMasks(char tipo);
 
 	int					temloops(CDC *pDC);

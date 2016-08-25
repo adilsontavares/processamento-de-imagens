@@ -18,6 +18,9 @@
 #include "DlgAprimoraNitidezCalculo2.h"
 #include "DlgAprimoraNitidezCalculo3.h"
 
+// Novos Dialogs
+#include "DlgAdicionar.h"
+
 
 class CPDImagemView : public CScrollView
 {
@@ -119,6 +122,10 @@ public:
 			void	OnRGBLUVCanalL						();
 			void	OnRGBLUVCanalU						();
 			void	OnRGBLUVCanalV						();
+
+			// Novos efeitos
+			void	OnAdiciona();
+
 
 			void	TratamentoCores(char tipo, int canal, CPDImagemDoc* pDocIn, CPDImagemDoc* pDocOut);
 			double  NormalizaCores(double r2, double r1, double pe, double pe1, double pe2);

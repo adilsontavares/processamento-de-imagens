@@ -39,52 +39,56 @@ using namespace std;
 IMPLEMENT_DYNCREATE(CPDImagemView, CScrollView)
                                                          
 BEGIN_MESSAGE_MAP(CPDImagemView, CScrollView)
-    //{{AFX_MSG_MAP(CPDImagemView)
+	//{{AFX_MSG_MAP(CPDImagemView)
 	ON_BN_CLICKED(ID_MOSTRA, OnMostra)
 	//}}AFX_MSG_MAP
-    // Standard printing commands 
-    ON_MESSAGE(WM_DOREALIZE								, OnDoRealize							)
-    ON_MESSAGE(ID_GOODBYE								, OnGoodBye								)
+	// Standard printing commands 
+	ON_MESSAGE(WM_DOREALIZE, OnDoRealize)
+	ON_MESSAGE(ID_GOODBYE, OnGoodBye)
 
-    ON_COMMAND(ID_FILE_PRINT							, CView::OnFilePrint					)
-    ON_COMMAND(ID_FILE_PRINT_PREVIEW					, CView::OnFilePrintPreview				)
+	ON_COMMAND(ID_FILE_PRINT, CView::OnFilePrint)
+	ON_COMMAND(ID_FILE_PRINT_PREVIEW, CView::OnFilePrintPreview)
 
-    ON_COMMAND(ID_IMAGEM_HISTOGRAMA						, OnImagemHistograma					)
-	    
-    ON_COMMAND(ID_IMAGEM_EQUALIZACAO					, OnImagemEqualizacao					)
-	ON_COMMAND(ID_IMAGEM_EQUALIZACAO_YIQ                , OnImagemEqualizacaoYIQ                )
-	ON_COMMAND(ID_YIQ_APRIMORAMENTODENITIDEZ			, OnAprimoramentoNitidez				)
+	ON_COMMAND(ID_IMAGEM_HISTOGRAMA, OnImagemHistograma)
 
-    ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_OTSU				, OnImagemLimiarizacaoOtsu				)
-    ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_KITTLER			, OnImagemLimiarizacaoKittler			)
-    ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_ENTROPIA			, OnImagemLimiarizacaoEntropia			)
-    ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_ANISOTROPIA		, OnImagemLimiarizacaoAnisotropia		)
-    ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_MANUAL			, OnImagemLimiarizacaoManual			)
+	ON_COMMAND(ID_IMAGEM_EQUALIZACAO, OnImagemEqualizacao)
+	ON_COMMAND(ID_IMAGEM_EQUALIZACAO_YIQ, OnImagemEqualizacaoYIQ)
+	ON_COMMAND(ID_YIQ_APRIMORAMENTODENITIDEZ, OnAprimoramentoNitidez)
 
-	ON_COMMAND(ID_MORFOLOGIA_BINARIA_EROSAO				, OnMorfologiaBinariaErosao				)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_DILATACAO			, OnMorfologiaBinariaDilatacao			)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_ABERTURA			, OnMorfologiaBinariaAbertura			)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_FECHAMENTO			, OnMorfologiaBinariaFechamento			)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_BORDAS_EROSAO		, OnMorfologiaBinariaBordasErosao		)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_BORDAS_DILATACAO	, OnMorfologiaBinariaBordasDilatacao	)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_BORDAS_DILERO		, OnMorfologiaBinariaBordasDilEro		)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_ESQUELETIZACAO		, OnMorfologiaBinariaEsqueletizacao		)
-    ON_COMMAND(ID_MORFOLOGIA_BINARIA_ULTIMAEROSAO		, OnMorfologiaBinariaUltimaErosao		)
+	ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_OTSU, OnImagemLimiarizacaoOtsu)
+	ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_KITTLER, OnImagemLimiarizacaoKittler)
+	ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_ENTROPIA, OnImagemLimiarizacaoEntropia)
+	ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_ANISOTROPIA, OnImagemLimiarizacaoAnisotropia)
+	ON_COMMAND(ID_IMAGEM_LIMIARIZACAO_MANUAL, OnImagemLimiarizacaoManual)
 
-    ON_COMMAND(ID_OPERACOES_LOGICAS						, OnOperacoesLogicas					)
-    ON_COMMAND(ID_IMAGEM_ZOOM							, OnImagemZoom							)
-    ON_COMMAND(ID_IMAGEM_INVERTE						, OnImagemInverte						)
-// Conversão RGB -> HSV -> RGB
-	ON_COMMAND(ID_HSV_EXTRAIR_CANAIS					, OnHsvExtrairCanais					)
-	ON_COMMAND(ID_HSV_EXTRAIR_CANAIS_CARDANI			, OnHsvExtrairCanais_Cardani			)
-	ON_COMMAND(ID_ESPAOSDECOR_HSI_CONVERSORGBPARAHSIHSIPARARGB,OnHSI							)
-	ON_COMMAND(ID_ESPACOSDECOR_XYZ						, OnRGBtoXYZ							)
-	ON_COMMAND(ID_ESPAOSDECOR_YCRCB_CONVERTER_RGB_YCRCB	, OnRGBtoYCrCb							)
-	ON_COMMAND(ID_ESPACOSDECOR_YIQ 						, OnYiq									)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_EROSAO, OnMorfologiaBinariaErosao)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_DILATACAO, OnMorfologiaBinariaDilatacao)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_ABERTURA, OnMorfologiaBinariaAbertura)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_FECHAMENTO, OnMorfologiaBinariaFechamento)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_BORDAS_EROSAO, OnMorfologiaBinariaBordasErosao)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_BORDAS_DILATACAO, OnMorfologiaBinariaBordasDilatacao)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_BORDAS_DILERO, OnMorfologiaBinariaBordasDilEro)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_ESQUELETIZACAO, OnMorfologiaBinariaEsqueletizacao)
+	ON_COMMAND(ID_MORFOLOGIA_BINARIA_ULTIMAEROSAO, OnMorfologiaBinariaUltimaErosao)
+
+	ON_COMMAND(ID_OPERACOES_LOGICAS, OnOperacoesLogicas)
+	ON_COMMAND(ID_IMAGEM_ZOOM, OnImagemZoom)
+	ON_COMMAND(ID_IMAGEM_INVERTE, OnImagemInverte)
+	// Conversão RGB -> HSV -> RGB
+	ON_COMMAND(ID_HSV_EXTRAIR_CANAIS, OnHsvExtrairCanais)
+	ON_COMMAND(ID_HSV_EXTRAIR_CANAIS_CARDANI, OnHsvExtrairCanais_Cardani)
+	ON_COMMAND(ID_ESPAOSDECOR_HSI_CONVERSORGBPARAHSIHSIPARARGB, OnHSI)
+	ON_COMMAND(ID_ESPACOSDECOR_XYZ, OnRGBtoXYZ)
+	ON_COMMAND(ID_ESPAOSDECOR_YCRCB_CONVERTER_RGB_YCRCB, OnRGBtoYCrCb)
+	ON_COMMAND(ID_ESPACOSDECOR_YIQ, OnYiq)
 	ON_COMMAND(ID_APRIMORANITIDEZCALCULO1, OnAprimoraNitidezCalculo1)
 	ON_COMMAND(ID_APRIMORANITIDEZCALCULO2, OnAprimoraNitidezCalculo2)
 	ON_COMMAND(ID_APRIMORANITIDEZCALCULO3, OnAprimoraNitidezCalculo3)
 	ON_COMMAND(ID_YCRCBEQUALIZACAO, OnImagemEqualizacaoYCrCb)
+
+	// Novos comandos
+	ON_COMMAND(ID_ADILSONTAVARES_ADICIONAR, OnAdiciona)
+
     ON_WM_LBUTTONDOWN	()
     ON_WM_LBUTTONUP		()
     ON_WM_LBUTTONDBLCLK	()
@@ -1120,6 +1124,36 @@ void	CPDImagemView::OnRGBLUVCanalV(){
 	pFrameO = CreateChild(pDocOut, pDocOut);
 }
 
+void CPDImagemView::OnAdiciona()
+{
+	CDlgAdicionar *dialog = new CDlgAdicionar();
+	if (dialog->DoModal() == IDCANCEL)
+		return;
+
+	CString TitleWindow;
+	HCURSOR OldCursor;
+	OldCursor = SetCursor(LoadCursor(NULL, IDC_WAIT));
+
+	CPDImagemDoc *pDocIn = GetDocument();
+	CDocTemplate *pTemplate = pDocIn->GetDocTemplate();
+	CPDImagemDoc *pDocOut = (CPDImagemDoc*)pTemplate->CreateNewDocument();
+
+	pDocOut->Imagem.hDIB = pDocIn->Imagem.CopyHandle();
+	pDocOut->Imagem.InitDIBData();
+
+	BYTE valor = *dialog->m_pValor;
+	pDocOut->Imagem.Adiciona(valor);
+
+	char titleBuff[16];
+	sprintf(titleBuff, "Adicionado %d", *dialog->m_pValor);
+
+	SetCursor(OldCursor);
+	TitleWindow = titleBuff;
+	pDocOut->SetTitle(TitleWindow);
+
+	CFrameWnd *pFrameO;
+	pFrameO = CreateChild(pDocOut, pDocOut);
+}
 
 void	CPDImagemView::OnRGBTSLCanalT(){
 	CString TitleWindow;

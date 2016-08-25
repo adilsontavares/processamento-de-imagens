@@ -2657,6 +2657,23 @@ for (cont_conv = 0; cont_conv < numero *3; cont_conv= cont_conv+3)
 
 }
 
+void CPDIBase::Adiciona(int valor)
+{
+	for (LONG x = 0; x < GetWidth(); ++x)
+	{
+		for (LONG y = 0; y < GetHeight(); ++y)
+		{
+			DWORD pixel = GetPixel(x, y);
+			DWORD r = min(255, GetRValue(pixel) + valor);
+			DWORD g = min(255, GetGValue(pixel) + valor);
+			DWORD b = min(255, GetBValue(pixel) + valor);
+			pixel = RGB(r, g, b);
+
+			SetPixel(x, y, pixel);
+		}
+	}
+}
+
 // Equalizacao no espaço de cores YCrCb no canal Y
 
 BOOL CPDIBase::EqualizacaoYCrCb()

@@ -78,6 +78,9 @@
     <ClCompile Include="DlgAprimoraNitidezCalculo3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DlgAdicionar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PDImagem.rc">
@@ -149,6 +152,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DlgAprimoraNitidezCalculo3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgAdicionar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
