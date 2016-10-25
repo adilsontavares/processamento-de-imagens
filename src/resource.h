@@ -48,7 +48,9 @@
 #define IDD_ADICIONAR                   158
 #define ID_APRIMORANITIDEZCALCULO2      159
 #define ID_APRIMORANITIDEZCALCULO3      160
+#define IDD_FASTADAPTIVECONTRAST        161
 #define IDC_IMAGEMA                     163
+#define IDD_FASTADAPTIVECONTRAST_LIMIARRUIDO 163
 #define IDC_OR                          164
 #define IDC_AND                         165
 #define IDC_XOR                         166
@@ -118,7 +120,9 @@
 #define IDC_VALOR                       268
 #define IDC_ED11                        269
 #define ID_OK                           269
+#define IDC_TAMANHO_JANELA              269
 #define ID_CANCEL                       270
+#define IDC_LIMIARRUIDO                 270
 #define IDC_CRUZ                        900
 #define IDC_TRES                        901
 #define IDC_LINHAH                      902
@@ -231,14 +235,16 @@
 #define ID_ADILSONTAVARES_ADICIONA      32915
 #define ID_ADILSONTAVARES_ADICIONAR     32916
 #define ID_ADILSONTAVARES_ADICIONAR32917 32917
+#define ID_ADILSONTAVARES_FASTADAPTIVECONSTRAST 32918
+#define ID_ADILSONTAVARES_FASTADAPTIVECONTRAST 32919
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        160
-#define _APS_NEXT_COMMAND_VALUE         32918
-#define _APS_NEXT_CONTROL_VALUE         269
-#define _APS_NEXT_SYMED_VALUE           106
+#define _APS_NEXT_RESOURCE_VALUE        167
+#define _APS_NEXT_COMMAND_VALUE         32920
+#define _APS_NEXT_CONTROL_VALUE         271
+#define _APS_NEXT_SYMED_VALUE           108
 #endif
 #endif

@@ -20,6 +20,7 @@
 
 // Novos Dialogs
 #include "DlgAdicionar.h"
+#include "DlgFastAdaptiveContrastParameters.h"
 
 
 class CPDImagemView : public CScrollView
@@ -125,6 +126,7 @@ public:
 
 			// Novos efeitos
 			void	OnAdiciona();
+			void	OnFastAdaptiveContrast();
 
 
 			void	TratamentoCores(char tipo, int canal, CPDImagemDoc* pDocIn, CPDImagemDoc* pDocOut);

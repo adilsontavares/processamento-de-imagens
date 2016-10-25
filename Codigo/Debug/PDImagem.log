@@ -1,0 +1,85 @@
+﻿  StdAfx.cpp
+  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+  PDIMorfb.cpp
+  PDImagemView.cpp
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(843): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(927): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(1018): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(1148): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(2635): warning C4305: 'argument': truncation from 'int' to 'char'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(2635): warning C4309: 'argument': truncation of constant value
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(3191): warning C4101: 'cor': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(3424): warning C4244: '=': conversion from 'double' to 'BYTE', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagemview.cpp(938): warning C4700: uninitialized local variable 's' used
+  PDImagemDoc.cpp
+  PDImagem.cpp
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdimagem.cpp(74): warning C4996: 'CWinApp::SetDialogBkColor': CWinApp::SetDialogBkColor is no longer supported. Instead, handle WM_CTLCOLORDLG in your dialog
+  c:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afxwin.h(5209): note: see declaration of 'CWinApp::SetDialogBkColor'
+  PDIBase.cpp
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(389): warning C4244: '=': conversion from 'ULONGLONG' to 'DWORD', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1811): warning C4101: 'Canal_g': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1811): warning C4101: 'Canal_b': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1807): warning C4101: 'buffer_Temp': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1811): warning C4101: 'Canal_r': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1908): warning C4101: 'Canal_g': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1903): warning C4101: 'lpTemp': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1908): warning C4101: 'Canal_b': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1904): warning C4101: 'buffer_Temp': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(1908): warning C4101: 'Canal_r': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2078): warning C4101: 'buffer_Temp': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2356): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2381): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2382): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2383): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2474): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2506): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2507): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2508): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2600): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2642): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2643): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2644): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2753): warning C4244: '=': conversion from 'double' to 'BYTE', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2766): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2767): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2768): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2685): warning C4101: 'cont': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2688): warning C4101: 'cr': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2688): warning C4101: 'cb': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2684): warning C4101: 'x': unreferenced local variable
+d:\desenvolvimento\github\processamento-de-imagens\codigo\pdibase.cpp(2686): warning C4101: 'contador': unreferenced local variable
+  MainFrm.cpp
+  DlgPRDistancia.cpp
+  DlgOpLogica.cpp
+  DlgLimiarManual.cpp
+  DlgInfo.cpp
+d:\desenvolvimento\github\processamento-de-imagens\codigo\dlginfo.cpp(41): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(637): note: see declaration of '_itoa'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\dlginfo.cpp(46): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(637): note: see declaration of '_itoa'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\dlginfo.cpp(51): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(637): note: see declaration of '_itoa'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\dlginfo.cpp(55): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(637): note: see declaration of '_itoa'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\dlginfo.cpp(59): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(637): note: see declaration of '_itoa'
+d:\desenvolvimento\github\processamento-de-imagens\codigo\dlginfo.cpp(63): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(637): note: see declaration of '_itoa'
+  DlgHistograma.cpp
+  DlgFatorZoomInterpolacao.cpp
+  DlgFatorZoom.cpp
+  DlgElemEstr2.cpp
+  DlgElemEstr1.cpp
+  DlgAprimoraNitidezCalculo3.cpp
+  DlgAprimoraNitidezCalculo2.cpp
+  DlgAprimoraNitidezCalculo1.cpp
+  DlgAdicionar.cpp
+  ChildFrm.cpp
+  AboutDlg.cpp
+AboutDlg.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  PDImagem.vcxproj -> D:\Desenvolvimento\GitHub\processamento-de-imagens\Codigo\.\Debug\PDImagem.exe
+  PDImagem.vcxproj -> .\Debug/PDImagem.pdb (Full PDB)

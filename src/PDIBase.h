@@ -150,7 +150,15 @@ public:
 
 	// Novos algoritmos
 
+	bool				PixelExiste(LONG x, LONG y);
+
+	DWORD				CalcularMedia(LONG x, LONG y, BYTE tamanhoJanela);
+	DWORD				CalcularMaximo(LONG x, LONG y, BYTE tamanhoJanela);
+	DWORD				CalcularMinimo(LONG x, LONG y, BYTE tamanhoJanela);
+
+
 	void				Adiciona(int valor);
+	void				FastAdaptiveContrast(int tamanhoJanela, DWORD limiarRuido);
 
 //	void				LineMasks(char tipo);
 

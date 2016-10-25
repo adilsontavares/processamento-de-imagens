@@ -81,6 +81,9 @@
     <ClCompile Include="DlgAdicionar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DlgFastAdaptiveContrastParameters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PDImagem.rc">
@@ -157,6 +160,9 @@
     <ClInclude Include="DlgAdicionar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DlgFastAdaptiveContrastParameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Bmphi.bmp">
@@ -200,6 +206,9 @@
     </None>
     <None Include="res\Tres.bmp">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource.hm">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
 </Project>

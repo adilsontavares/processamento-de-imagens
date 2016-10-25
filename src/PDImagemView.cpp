@@ -88,6 +88,7 @@ BEGIN_MESSAGE_MAP(CPDImagemView, CScrollView)
 
 	// Novos comandos
 	ON_COMMAND(ID_ADILSONTAVARES_ADICIONAR, OnAdiciona)
+	ON_COMMAND(ID_ADILSONTAVARES_FASTADAPTIVECONTRAST, OnFastAdaptiveContrast)
 
     ON_WM_LBUTTONDOWN	()
     ON_WM_LBUTTONUP		()
@@ -1153,6 +1154,24 @@ void CPDImagemView::OnAdiciona()
 
 	CFrameWnd *pFrameO;
 	pFrameO = CreateChild(pDocOut, pDocOut);
+}
+
+void CPDImagemView::OnFastAdaptiveContrast()
+{
+	DlgFastAdaptiveContrastParameters *dialog = new DlgFastAdaptiveContrastParameters();
+	if (dialog->DoModal() == IDCANCEL)
+		return;
+
+	CString TitleWindow;
+	HCURSOR OldCursor;
+	OldCursor = SetCursor(LoadCursor(NULL, IDC_WAIT));
+
+	CPDImagemDoc *pDoc = GetDocument();
+	pDoc->Imagem.FastAdaptiveContrast(5, *dialog->m_pLimiarRuido);
+
+	SetCursor(OldCursor);
+
+	MessageBox("Os dados dos pixels foram exportados para o arquivo saida.txt");
 }
 
 void	CPDImagemView::OnRGBTSLCanalT(){
