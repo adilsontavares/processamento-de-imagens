@@ -1,16 +1,13 @@
 # Processamento de Imagens
 
-Projeto desenvolvido em C++, utilizando Visual Studio, para alteraÁıes em imagens conforme a disciplina de Processamento de Imagens.
+Projeto desenvolvido em Qt (C++) com o objetivo da aplica√ß√£o pr√°tica de t√©cnicas de processamento de imagens.
 
 ## Pastas
 
-- **bin:** Arquivo compilado (execut·vel).
-- **src:** CÛdigo fonte
-- **images:** Imagens de referÍncia para teste da aplicaÁ„o.
+- **antigo**: Projeto Visual Studio com base no material disponibilizado pelo professor.
+- **src:** C√≥digo fonte.
+- **images:** Imagens de refer√™ncia para teste dos algoritmos implementados.
 
-## Adicionando 30 em cada canal da imagem
-
-1. Abrir a imagem
-2. Selecionar o menu Adilson Tavares -> Adicionar
-3. Inserir a quantidade desejada no campo de texto
-4. Clicar OK
+## Filtros dispon√≠veis
+- Invert
+- Fast Adaptive Contrast
