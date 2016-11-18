@@ -18,7 +18,7 @@
 #ifdef Q_OS_WIN
 #include <windows.h>
 #else
-#include <sys/times.h>
+#include <sys/time.h>
 #endif
 
 class Time

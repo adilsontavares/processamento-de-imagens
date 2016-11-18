@@ -1,4 +1,4 @@
-QT += widgets
+QT += widgets core gui
 
 CONFIG += c++11
 
@@ -14,7 +14,9 @@ SOURCES += main.cpp \
     Image.cpp \
     ImageFilter.cpp \
     lodepng.cpp \
-    ImageView.cpp
+    ImageView.cpp \
+    ImageFilterManager.cpp \
+    ImageFilterConfig.cpp
 
 HEADERS += \
     MainWindow.hpp \
@@ -26,4 +28,6 @@ HEADERS += \
     lodepng.h \
     Pixel.hpp \
     Time.hpp \
-    ImageView.h
+    ImageView.h \
+    ImageFilterManager.h \
+    ImageFilterConfig.h
