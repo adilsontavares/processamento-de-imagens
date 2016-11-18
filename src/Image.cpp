@@ -70,7 +70,7 @@ unsigned int Image::getHeight()
     return _height;
 }
 
-ImageData Image::getData()
+const ImageData& Image::getData()
 {
     return _data;
 }

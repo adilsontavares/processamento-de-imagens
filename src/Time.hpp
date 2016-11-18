@@ -11,7 +11,15 @@
 #include <cstdlib>
 #include <thread>
 #include <chrono>
-#include <sys/time.h>
+#include <ctime>
+
+#include <QObject>
+
+#ifdef Q_OS_WIN
+#include <windows.h>
+#else
+#include <sys/times.h>
+#endif
 
 class Time
 {
@@ -28,9 +36,18 @@ public:
     
     static double seconds()
     {
+#ifdef Q_OS_WIN
+
+        SYSTEMTIME time;
+        GetSystemTime(&time);
+
+        double result = time.wSecond + time.wMilliseconds / 1000.0;
+        return result;
+#else
         struct timeval tv;
         gettimeofday(&tv, 0);
         return double(tv.tv_sec + tv.tv_usec / 1000000.0);
+#endif
     }
     
     static void sleepNanoseconds(uint32_t nanoseconds)
@@ -45,6 +62,6 @@ public:
     
     static void sleepSeconds(double seconds)
     {
-        sleepMilliseconds(seconds * 1000);
+        sleepMilliseconds(uint32_t(seconds * 1000));
     }
 };

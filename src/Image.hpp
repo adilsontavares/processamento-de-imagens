@@ -38,7 +38,7 @@ public:
     unsigned int getWidth();
     unsigned int getHeight();
     
-    ImageData getData();
+    const ImageData& getData();
 
     bool hasPixel(unsigned int x, unsigned int y);
     unsigned int indexForPixel(unsigned int x, unsigned int y);

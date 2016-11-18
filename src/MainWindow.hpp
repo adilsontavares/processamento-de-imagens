@@ -1,44 +1,50 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include <QMainWindow>
 #include <QLabel>
 #include <QPushButton>
-#include <QPixmap>
+#include <QSlider>
+#include <QButtonGroup>
 
 #include "Image.hpp"
+#include "ImageView.h"
 
 class MainWindow : public QMainWindow
 {
 private:
 
-    Image *_originalImage;
-    Image *_outputImage;
+	QLabel *_statusLabel;
 
-    QLabel *_statusLabel;
+	ImageView *_originalImageView;
+	ImageView *_outputImageView;
 
-    QLabel *_originalImageView;
-    QLabel *_outputImageView;
+	QButtonGroup *_filterButtonsGroup;
 
-    QPushButton *_applyFilterButton;
+	QLabel *_zoomTitleLabel;
+	QSlider *_zoomSlider;
+	QLabel *_zoomLabel;
 
-    void createMenu();
+	void createMenu();
 
-    void setOriginalImage(Image *image);
-    void setOutputImage(Image *image);
+	void setOriginalImage(Image *image);
+	void setOutputImage(Image *image);
 
-    QPixmap pixmapFromImage(Image *image);
+	void setEditImageEnabled(bool enabled);
 
-    Q_OBJECT
+	Q_OBJECT
+
 public:
-    explicit MainWindow(QWidget *parent = 0);
 
-signals:
+	explicit MainWindow(QWidget *parent = 0);
+
+private slots:
 
 public slots:
 
-    void openFile();
-    void applyFilter();
-};
+	void openFile();
 
-#endif // MAINWINDOW_H
+	void applyFilterAt(int index);
+	void applyFilter(ImageFilter *filter);
+
+	void setZoom(int zoom);
+};

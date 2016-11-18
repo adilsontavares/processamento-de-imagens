@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     FilterInvert.cpp \
     Image.cpp \
     ImageFilter.cpp \
-    lodepng.cpp
+    lodepng.cpp \
+    ImageView.cpp
 
 HEADERS += \
     MainWindow.hpp \
@@ -24,4 +25,5 @@ HEADERS += \
     ImageFilters.h \
     lodepng.h \
     Pixel.hpp \
-    Time.hpp
+    Time.hpp \
+    ImageView.h

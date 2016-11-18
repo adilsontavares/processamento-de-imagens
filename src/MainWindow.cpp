@@ -10,9 +10,13 @@
 #include <QStyle>
 #include <QString>
 #include <QMessageBox>
+#include <QScrollArea>
+#include <QScrollBar>
+#include <QSignalMapper>
 
 #include "Image.hpp"
 #include "ImageFilters.h"
+#include "ImageFilterManager.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -20,18 +24,60 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     auto imageLayout = new QHBoxLayout();
 
     _statusLabel = new QLabel("Abra uma imagem para aplicar o filtro.");
+	_statusLabel->setStyleSheet(QString("background-color: rgba(0, 0, 0, 0.3);"));
+	_statusLabel->setFixedHeight(30);
     _statusLabel->setAlignment(Qt::AlignCenter);
 
-    _originalImageView = new QLabel("Imagem original");
-    _originalImageView->setAlignment(Qt::AlignCenter);
-    _originalImageView->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    _originalImageView = new ImageView();
+    _originalImageView->setTitle("Imagem original");
 
-    _outputImageView = new QLabel("Imagem modificada");
-    _outputImageView->setAlignment(Qt::AlignCenter);
-    _outputImageView->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    _outputImageView = new ImageView();
+    _outputImageView->setTitle("Imagem modificada");
 
-    _applyFilterButton = new QPushButton("Aplicar filtro");
-    connect(_applyFilterButton, SIGNAL(clicked(bool)), this, SLOT(applyFilter()));
+	connect(_originalImageView->horizontalScrollBar(), SIGNAL(valueChanged(int)), _outputImageView->horizontalScrollBar(), SLOT(setValue(int)));
+	connect(_originalImageView->verticalScrollBar(), SIGNAL(valueChanged(int)), _outputImageView->verticalScrollBar(), SLOT(setValue(int)));
+
+	connect(_outputImageView->horizontalScrollBar(), SIGNAL(valueChanged(int)), _originalImageView->horizontalScrollBar(), SLOT(setValue(int)));
+	connect(_outputImageView->verticalScrollBar(), SIGNAL(valueChanged(int)), _originalImageView->verticalScrollBar(), SLOT(setValue(int)));
+
+	auto filtersLayout = new QHBoxLayout();
+	auto filters = ImageFilterManager::instance()->getFilters();
+	auto filtersMapper = new QSignalMapper(this);
+
+	_filterButtonsGroup = new QButtonGroup();
+
+	for (int i = 0; i < filters.size(); ++i)
+	{
+		auto button = new QPushButton(filters[i]->getName());
+
+		filtersMapper->setMapping(button, i);
+		filtersLayout->addWidget(button);
+
+		_filterButtonsGroup->addButton(button, i);
+
+		connect(button, SIGNAL(clicked()), filtersMapper, SLOT(map()));
+	}
+
+	connect(filtersMapper, SIGNAL(mapped(int)), this, SLOT(applyFilterAt(int)));
+
+	_zoomTitleLabel = new QLabel("Zoom:");
+	_zoomLabel = new QLabel("100%");
+	_zoomLabel->setAlignment(Qt::AlignRight);
+	_zoomLabel->setFixedWidth(30);
+
+	_zoomSlider = new QSlider(Qt::Horizontal);
+	_zoomSlider->setTickInterval(25);
+	_zoomSlider->setTickPosition(QSlider::TickPosition::TicksBelow);
+	_zoomSlider->setMinimum(0);
+	_zoomSlider->setMaximum(200);
+	_zoomSlider->setValue(100);
+	_zoomSlider->setTracking(true);
+	connect(_zoomSlider, SIGNAL(valueChanged(int)), this, SLOT(setZoom(int)));
+
+	auto zoomLayout = new QHBoxLayout();
+	zoomLayout->addWidget(_zoomTitleLabel);
+	zoomLayout->addWidget(_zoomSlider);
+	zoomLayout->addWidget(_zoomLabel);
 
     auto separator = new QWidget();
     separator->setFixedWidth(1);
@@ -47,7 +93,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     mainLayout->addWidget(_statusLabel);
     mainLayout->addLayout(imageLayout);
-    mainLayout->addWidget(_applyFilterButton);
+	mainLayout->addLayout(zoomLayout);
+	mainLayout->addLayout(filtersLayout);
 
     auto centralWidget = new QWidget();
     centralWidget->setLayout(mainLayout);
@@ -58,20 +105,38 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     createMenu();
 }
 
-QPixmap MainWindow::pixmapFromImage(Image *image)
+void MainWindow::setZoom(int zoom)
 {
-    auto qimage = QImage((uchar*)&image->getData()[0], image->getWidth(), image->getHeight(), QImage::Format_RGBA8888);
+	auto scale = zoom / 100.0;
 
-    QPixmap pixmap;
-    pixmap.convertFromImage(qimage);
+	_originalImageView->setScale(scale);
+	_outputImageView->setScale(scale);
 
-    return pixmap;
+	_zoomLabel->setText(QString("%1%").arg(zoom));
 }
 
-void MainWindow::applyFilter()
+void MainWindow::applyFilterAt(int index)
 {
-    auto filter = new FilterInvert();
-    auto image = new Image(*_originalImage);
+	auto filters = ImageFilterManager::instance()->getFilters();
+
+	if (index < 0 || index >= filters.size())
+		return;
+
+	auto filter = filters[index];
+	applyFilter(filter);
+}
+
+void MainWindow::applyFilter(ImageFilter * filter)
+{
+    auto originalImage = _originalImageView->getImage();
+
+    if (!originalImage)
+    {
+        QMessageBox::warning(this, "O filtro não pode ser aplicado", "A imagem original não foi carregada ou está danificada.", QMessageBox::Ok);
+        return;
+    }
+
+    auto image = new Image(*originalImage);
 
     double start = Time::seconds();
     image->applyFilter(filter);
@@ -88,38 +153,36 @@ void MainWindow::applyFilter()
 
 void MainWindow::setOutputImage(Image *image)
 {
-    _outputImage = image;
+    _outputImageView->setImage(image);
+}
 
-    if (image)
-    {
-        _outputImageView->setPixmap(pixmapFromImage(image));
-        _applyFilterButton->setEnabled(false);
-    }
-    else
-    {
-        _outputImageView->setText("Imagem modificada");
-    }
+void MainWindow::setEditImageEnabled(bool enabled)
+{
+	for (int i = 0; i < _filterButtonsGroup->buttons().count(); ++i)
+	{
+		auto button = _filterButtonsGroup->button(i);
+		button->setEnabled(enabled);
+	}
+
+	_zoomSlider->setEnabled(enabled);
 }
 
 void MainWindow::setOriginalImage(Image *image)
 {
-    _originalImage = image;
+    _originalImageView->setImage(image);
 
     if (!image)
     {
         _statusLabel->setText("Abra uma imagem para aplicar o filtro.");
-
-        _originalImageView->setText("Imagem original");
-        _applyFilterButton->setEnabled(false);
+		setEditImageEnabled(false);
     }
     else
     {
         QString status;
         status.sprintf("Imagem de tamanho %d x %d", image->getWidth(), image->getHeight());
         _statusLabel->setText(status);
-
-        _originalImageView->setPixmap(pixmapFromImage(image));
-        _applyFilterButton->setEnabled(true);
+		
+		setEditImageEnabled(true);
     }
 
     setOutputImage(0);
@@ -141,10 +204,20 @@ void MainWindow::openFile()
     if (dialog->exec())
     {
         auto file = dialog->selectedFiles().first();
+
+        std::cout << "Abrindo imagem: \"" << file.toStdString() << "\"" << std::endl;
+
         auto image = Image::load(file.toStdString().c_str());
 
-        if (!image)
+        if (image)
+        {
+            std::cout << "Imagem carregada com sucesso!" << std::endl;
+        }
+        else
+        {
+            std::cout << "Erro ao abrir a imagem..." << std::endl;
             QMessageBox::warning(this, tr("Erro ao abrir a imagem."), tr("A imagem não pôde ser aberta. Verifique se ela está em formato PNG e tente novamente."), QMessageBox::Ok);
+        }
 
         setOriginalImage(image);
     }
