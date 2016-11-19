@@ -5,8 +5,6 @@
 #include "MainWindow.hpp"
 #include "ImageFilterConfig.hpp"
 
-#include "InputWindow.hpp"
-
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
