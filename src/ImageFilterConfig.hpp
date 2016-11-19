@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ImageFilterManager.h"
+#include "ImageFilterManager.hpp"
 
 class ImageFilterConfig
 {

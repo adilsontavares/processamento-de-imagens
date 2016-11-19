@@ -15,8 +15,8 @@
 #include <QSignalMapper>
 
 #include "Image.hpp"
-#include "ImageFilters.h"
-#include "ImageFilterManager.h"
+#include "ImageFilters.hpp"
+#include "ImageFilterManager.hpp"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     auto imageLayout = new QHBoxLayout();
 
     _statusLabel = new QLabel("Abra uma imagem para aplicar o filtro.");
-	_statusLabel->setStyleSheet(QString("background-color: rgba(0, 0, 0, 0.3);"));
+    _statusLabel->setStyleSheet(QString("background-color: rgba(0, 0, 0, 0.1);"));
 	_statusLabel->setFixedHeight(30);
     _statusLabel->setAlignment(Qt::AlignCenter);
 

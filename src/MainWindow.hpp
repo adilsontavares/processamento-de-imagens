@@ -7,7 +7,7 @@
 #include <QButtonGroup>
 
 #include "Image.hpp"
-#include "ImageView.h"
+#include "ImageView.hpp"
 
 class MainWindow : public QMainWindow
 {

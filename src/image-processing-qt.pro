@@ -16,7 +16,14 @@ SOURCES += main.cpp \
     lodepng.cpp \
     ImageView.cpp \
     ImageFilterManager.cpp \
-    ImageFilterConfig.cpp
+    ImageFilterConfig.cpp \
+    InputWindow.cpp \
+    InputWindowField.cpp \
+    InputWindowFieldBool.cpp \
+    InputWindowFieldByte.cpp \
+    InputWindowFieldInt.cpp \
+    InputWindowFieldString.cpp \
+    InputWindowFieldFloat.cpp
 
 HEADERS += \
     MainWindow.hpp \
@@ -24,10 +31,17 @@ HEADERS += \
     FilterInvert.hpp \
     Image.hpp \
     ImageFilter.hpp \
-    ImageFilters.h \
     lodepng.h \
     Pixel.hpp \
     Time.hpp \
-    ImageView.h \
-    ImageFilterManager.h \
-    ImageFilterConfig.h
+    ImageView.hpp \
+    ImageFilters.hpp \
+    ImageFilterManager.hpp \
+    ImageFilterConfig.hpp \
+    InputWindow.hpp \
+    InputWindowField.hpp \
+    InputWindowFieldBool.hpp \
+    InputWindowFieldByte.hpp \
+    InputWindowFieldInt.hpp \
+    InputWindowFieldString.hpp \
+    InputWindowFieldFloat.hpp

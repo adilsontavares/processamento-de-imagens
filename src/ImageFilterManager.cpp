@@ -1,4 +1,4 @@
-#include "ImageFilterManager.h"
+#include "ImageFilterManager.hpp"
 
 ImageFilterManager::ImageFilterManager()
 {

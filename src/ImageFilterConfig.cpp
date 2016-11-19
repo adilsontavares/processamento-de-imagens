@@ -1,4 +1,4 @@
-#include "ImageFilterConfig.h"
+#include "ImageFilterConfig.hpp"
 
 #include "FilterInvert.hpp"
 #include "FilterFastAdaptiveContrast.hpp"
