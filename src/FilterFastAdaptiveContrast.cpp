@@ -29,7 +29,7 @@ bool FilterFastAdaptiveContrast::configure()
     return true;
 }
 
-int FilterFastAdaptiveContrast::function(int x, float alpha, unsigned char w)
+int FilterFastAdaptiveContrast::function(int x, float alpha, int w)
 {
     auto a = alpha / (2.0 * w);
     auto b = (alpha / w) * x - alpha - 1.0;
@@ -42,11 +42,11 @@ void FilterFastAdaptiveContrast::apply(Image *image)
 {
     const unsigned int count = image->getWidth() * image->getHeight();
 
-    auto pixels = new unsigned char[count];
-    auto avg = new unsigned char[count];
-    auto min = new unsigned char[count];
-    auto max = new unsigned char[count];
-    auto out = new unsigned char[count];
+    auto pixels = new int[count];
+    auto avg = new int[count];
+    auto min = new int[count];
+    auto max = new int[count];
+    auto out = new int[count];
 
     Pixel pixel;
 
@@ -105,10 +105,10 @@ void FilterFastAdaptiveContrast::apply(Image *image)
             if (neighbor >= 0)
             {
                 if (min[neighbor] < min[current])
-                    min[current] = (1 - _c) * min[current] + _c * min[neighbor];
+                    min[current] = (1.0 - _c) * min[current] + _c * min[neighbor];
 
                 if (max[neighbor] > max[current])
-                    max[current] = (1 - _c) * max[current] + _c * max[neighbor];
+                    max[current] = (1.0 - _c) * max[current] + _c * max[neighbor];
             }
         }
     }
@@ -120,9 +120,9 @@ void FilterFastAdaptiveContrast::apply(Image *image)
         {
             auto current = image->indexForPixel(x, y);
             auto diff = max[current] - min[current];
-            auto w = diff;
+            auto w = abs(diff);
 
-            if (diff > _w0 && min[current] <= pixels[current] && avg[current] <= max[current])
+            if (diff != 0 && w >= _w0 && min[current] <= pixels[current] && avg[current] <= max[current])
             {
                 auto iNew = w * ((pixels[current] - min[current]) / diff);
                 auto aNew = w * ((avg[current] - min[current]) / diff);
@@ -131,7 +131,9 @@ void FilterFastAdaptiveContrast::apply(Image *image)
                 auto f = function(iNew, alpha, w);
                 auto result = min[current] + f;
 
-                out[current] = (unsigned char)Math::clamp((int)result, 0, 255);
+                std::cout << "Alpha = " << alpha << std::endl;
+
+                out[current] = Math::clamp((int)result, 0, 255);
             }
         }
     }
