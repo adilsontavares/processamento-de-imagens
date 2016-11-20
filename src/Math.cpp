@@ -5,7 +5,6 @@
 
 Math::Math()
 {
-
 }
 
 int Math::clamp(int num, int min, int max)

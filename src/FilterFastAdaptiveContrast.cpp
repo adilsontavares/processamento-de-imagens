@@ -18,16 +18,18 @@ bool FilterFastAdaptiveContrast::configure()
 {
     auto window = new InputWindow();
     window->addField("C", "Conductivity Factor", InputWindowField::Type::Float);
+    window->addField("W0", "Limiar de ruído", InputWindowField::Type::Byte);
 
     if (!window->exec())
         return false;
 
     _c = window->getFloat("C");
+    _w0 = window->getByte("W0");
 
     return true;
 }
 
-float FilterFastAdaptiveContrast::function(int x, float alpha, unsigned char w)
+int FilterFastAdaptiveContrast::function(int x, float alpha, unsigned char w)
 {
     auto a = alpha / (2.0 * w);
     auto b = (alpha / w) * x - alpha - 1.0;
@@ -66,7 +68,33 @@ void FilterFastAdaptiveContrast::apply(Image *image)
         }
     }
 
-    // Linhas
+    // Calcula a média nas linhas
+    for (unsigned y = 0; y < image->getHeight(); ++y)
+    {
+        for (unsigned int x = 0; x < image->getWidth(); ++x)
+        {
+            auto current = image->indexForPixel(x, y);
+            auto neighbor = image->indexForPixel(x - 1, y);
+
+            if (neighbor >= 0)
+                avg[current] = (1.0 - _c) * avg[current] + _c * avg[neighbor];
+        }
+    }
+
+    // Calcula a média nas colunas
+    for (unsigned int x = 0; x < image->getWidth(); ++x)
+    {
+        for (unsigned y = 0; y < image->getHeight(); ++y)
+        {
+            auto current = image->indexForPixel(x, y);
+            auto neighbor = image->indexForPixel(x, y - 1);
+
+            if (neighbor >= 0)
+                avg[current] = (1.0 - _c) * avg[current] + _c * avg[neighbor];
+        }
+    }
+
+    // Calcula os mínimos e máximos
     for (unsigned int x = 0; x < image->getWidth(); ++x)
     {
         for (unsigned y = 0; y < image->getHeight(); ++y)
@@ -76,32 +104,25 @@ void FilterFastAdaptiveContrast::apply(Image *image)
 
             if (neighbor >= 0)
             {
-                avg[current] = (1.0 - _c) * avg[current] + _c * avg[neighbor];
-
                 if (min[neighbor] < min[current])
                     min[current] = (1 - _c) * min[current] + _c * min[neighbor];
 
                 if (max[neighbor] > max[current])
                     max[current] = (1 - _c) * max[current] + _c * max[neighbor];
             }
+        }
+    }
 
-            neighbor = image->indexForPixel(x, y - 1);
-
-            if (neighbor >= 0)
-            {
-                avg[current] = (1.0 - _c) * avg[current] + _c * avg[neighbor];
-
-                if (min[neighbor] < min[current])
-                    min[current] = (1 - _c) * min[current] + _c * min[neighbor];
-
-                if (max[neighbor] > max[current])
-                    max[current] = (1 - _c) * max[current] + _c * max[neighbor];
-            }
-
-            auto w = max[current] - min[current];
+    // Calcula o resultado
+    for (unsigned int x = 0; x < image->getWidth(); ++x)
+    {
+        for (unsigned y = 0; y < image->getHeight(); ++y)
+        {
+            auto current = image->indexForPixel(x, y);
             auto diff = max[current] - min[current];
+            auto w = diff;
 
-            if (diff > 0 && min[current] <= pixels[current] && avg[current] <= max[current])
+            if (diff > _w0 && min[current] <= pixels[current] && avg[current] <= max[current])
             {
                 auto iNew = w * ((pixels[current] - min[current]) / diff);
                 auto aNew = w * ((avg[current] - min[current]) / diff);

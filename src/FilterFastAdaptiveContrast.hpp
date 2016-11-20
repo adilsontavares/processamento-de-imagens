@@ -15,8 +15,9 @@ class FilterFastAdaptiveContrast : public ImageFilter
 private:
 
     float _c;
+    unsigned char _w0;
 
-    float function(int x, float alpha, unsigned char w);
+    int function(int x, float alpha, unsigned char w);
 
 public:
     
