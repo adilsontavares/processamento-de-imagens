@@ -23,7 +23,9 @@ SOURCES += main.cpp \
     InputWindowFieldByte.cpp \
     InputWindowFieldInt.cpp \
     InputWindowFieldString.cpp \
-    InputWindowFieldFloat.cpp
+    InputWindowFieldFloat.cpp \
+    FilterGrayscale.cpp \
+    Math.cpp
 
 HEADERS += \
     MainWindow.hpp \
@@ -35,7 +37,6 @@ HEADERS += \
     Pixel.hpp \
     Time.hpp \
     ImageView.hpp \
-    ImageFilters.hpp \
     ImageFilterManager.hpp \
     ImageFilterConfig.hpp \
     InputWindow.hpp \
@@ -44,4 +45,6 @@ HEADERS += \
     InputWindowFieldByte.hpp \
     InputWindowFieldInt.hpp \
     InputWindowFieldString.hpp \
-    InputWindowFieldFloat.hpp
+    InputWindowFieldFloat.hpp \
+    FilterGrayscale.hpp \
+    Math.hpp

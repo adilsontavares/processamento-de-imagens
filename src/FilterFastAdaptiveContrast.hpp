@@ -12,10 +12,18 @@
 
 class FilterFastAdaptiveContrast : public ImageFilter
 {
+private:
+
+    float _c;
+
+    float function(int x, float alpha, unsigned char w);
+
 public:
     
     FilterFastAdaptiveContrast();
+
+    virtual bool configure();
     
     virtual const char *getName();
-    virtual void filterPixel(Pixel& pixel);
+    virtual void apply(Image *image);
 };

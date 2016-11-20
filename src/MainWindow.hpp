@@ -43,7 +43,7 @@ public slots:
 
 	void openFile();
 
-	void applyFilterAt(int index);
+    void applyFilterAt(int index);
 	void applyFilter(ImageFilter *filter);
 
 	void setZoom(int zoom);

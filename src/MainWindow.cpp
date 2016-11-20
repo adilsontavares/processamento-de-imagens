@@ -15,7 +15,6 @@
 #include <QSignalMapper>
 
 #include "Image.hpp"
-#include "ImageFilters.hpp"
 #include "ImageFilterManager.hpp"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
@@ -46,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 	_filterButtonsGroup = new QButtonGroup();
 
-	for (int i = 0; i < filters.size(); ++i)
+    for (unsigned int i = 0; i < filters.size(); ++i)
 	{
 		auto button = new QPushButton(filters[i]->getName());
 
@@ -58,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 		connect(button, SIGNAL(clicked()), filtersMapper, SLOT(map()));
 	}
 
-	connect(filtersMapper, SIGNAL(mapped(int)), this, SLOT(applyFilterAt(int)));
+    connect(filtersMapper, SIGNAL(mapped(int)), this, SLOT(applyFilterAt(int)));
 
 	_zoomTitleLabel = new QLabel("Zoom:");
 	_zoomLabel = new QLabel("100%");
@@ -100,7 +99,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     centralWidget->setLayout(mainLayout);
     setCentralWidget(centralWidget);
 
-    setOriginalImage(0);
+    auto image = Image::load("../images/brain.png");
+    setOriginalImage(image);
+
+    setZoom(68);
 
     createMenu();
 }
@@ -112,6 +114,9 @@ void MainWindow::setZoom(int zoom)
 	_originalImageView->setScale(scale);
 	_outputImageView->setScale(scale);
 
+    if (_zoomSlider->value() != zoom)
+        _zoomSlider->setValue(zoom);
+
 	_zoomLabel->setText(QString("%1%").arg(zoom));
 }
 
@@ -119,7 +124,7 @@ void MainWindow::applyFilterAt(int index)
 {
 	auto filters = ImageFilterManager::instance()->getFilters();
 
-	if (index < 0 || index >= filters.size())
+    if (index >= filters.size())
 		return;
 
 	auto filter = filters[index];
@@ -137,6 +142,9 @@ void MainWindow::applyFilter(ImageFilter * filter)
     }
 
     auto image = new Image(*originalImage);
+
+    if (!filter->configure())
+        return;
 
     double start = Time::seconds();
     image->applyFilter(filter);

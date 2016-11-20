@@ -2,12 +2,12 @@
 
 #include "ImageFilter.hpp"
 
-class FilterInvert : public ImageFilter
+class FilterGrayscale : public ImageFilter
 {
 public:
-    
-    FilterInvert();
-    
+
+    FilterGrayscale();
+
     virtual const char *getName();
     virtual void filterPixel(Image *image, unsigned int x, unsigned int y, Pixel& pixel);
 };

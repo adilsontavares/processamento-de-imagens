@@ -17,10 +17,12 @@ protected:
     
     ImageFilter();
     
-    virtual void filterPixel(Pixel& pixel);
+    virtual void filterPixel(Image *image, unsigned int x, unsigned int y, Pixel& pixel);
     
 public:
     
+    virtual bool configure();
+
     virtual const char *getName() = 0;
     virtual void apply(Image *image);
 };

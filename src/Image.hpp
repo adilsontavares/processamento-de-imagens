@@ -41,7 +41,9 @@ public:
     const ImageData& getData();
 
     bool hasPixel(unsigned int x, unsigned int y);
-    unsigned int indexForPixel(unsigned int x, unsigned int y);
+
+    int dataIndexForPixel(unsigned int x, unsigned int y);
+    int indexForPixel(unsigned int x, unsigned int y);
     
     bool getPixel(unsigned int x, unsigned int y, Pixel *pixel);
     void setPixel(Pixel pixel, int x, int y);

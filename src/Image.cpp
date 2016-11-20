@@ -47,7 +47,15 @@ bool Image::hasPixel(unsigned int x, unsigned int y)
     return valid;
 }
 
-unsigned int Image::indexForPixel(unsigned int x, unsigned int y)
+int Image::indexForPixel(unsigned int x, unsigned int y)
+{
+    if (!hasPixel(x, y))
+        return -1;
+
+    return x + y * getWidth();
+}
+
+int Image::dataIndexForPixel(unsigned int x, unsigned int y)
 {
     if (!hasPixel(x, y))
         return -1;
@@ -80,7 +88,7 @@ void Image::setPixel(Pixel pixel, int x, int y)
     if (!hasPixel(x, y))
         return;
     
-    auto index = indexForPixel(x, y);
+    auto index = dataIndexForPixel(x, y);
     
     _data[index    ] = pixel.r;
     _data[index + 1] = pixel.g;
@@ -97,7 +105,7 @@ bool Image::getPixel(unsigned int x, unsigned int y, Pixel *pixel)
     }
     
     auto output = Pixel();
-    auto index = indexForPixel(x, y);
+    auto index = dataIndexForPixel(x, y);
     
     output.r = _data[index    ];
     output.g = _data[index + 1];

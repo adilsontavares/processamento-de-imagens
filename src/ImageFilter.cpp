@@ -21,13 +21,18 @@ void ImageFilter::apply(Image *image)
         for (unsigned int y = 0; y < image->getHeight(); ++y)
         {
             image->getPixel(x, y, &pixel);
-            filterPixel(pixel);
+            filterPixel(image, x, y, pixel);
             image->setPixel(pixel, x, y);
         }
     }
 }
 
-void ImageFilter::filterPixel(Pixel& pixel)
+bool ImageFilter::configure()
+{
+    return true;
+}
+
+void ImageFilter::filterPixel(Image *image, unsigned int x, unsigned int y, Pixel& pixel)
 {
     pixel.r = 255;
     pixel.g = 0;
