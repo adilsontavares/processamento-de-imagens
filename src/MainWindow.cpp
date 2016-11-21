@@ -16,6 +16,7 @@
 
 #include "Image.hpp"
 #include "ImageFilterManager.hpp"
+#include "FilterGrayscale.hpp"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -177,6 +178,9 @@ void MainWindow::setEditImageEnabled(bool enabled)
 
 void MainWindow::setOriginalImage(Image *image)
 {
+    if (image)
+        image->applyFilter(new FilterGrayscale());
+
     _originalImageView->setImage(image);
 
     if (!image)

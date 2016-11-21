@@ -17,7 +17,7 @@ private:
     float _c;
     unsigned char _w0;
 
-    int function(int x, float alpha, int w);
+    float function(int x, float alpha, int w);
 
 public:
     

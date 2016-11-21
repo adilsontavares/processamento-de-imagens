@@ -4,6 +4,7 @@
 
 #include "Math.hpp"
 #include <cmath>
+#include <cassert>
 
 FilterFastAdaptiveContrast::FilterFastAdaptiveContrast() : ImageFilter()
 {
@@ -29,13 +30,13 @@ bool FilterFastAdaptiveContrast::configure()
     return true;
 }
 
-int FilterFastAdaptiveContrast::function(int x, float alpha, int w)
+float FilterFastAdaptiveContrast::function(int x, float alpha, int w)
 {
     auto a = alpha / (2.0 * w);
     auto b = (alpha / w) * x - alpha - 1.0;
     auto c = (alpha / (2.0 * w)) * x * x - alpha * x + x;
 
-    return (-b - sqrt(b * b - 4.0 * a * c)) / (2.0 * a);
+    return (-b - sqrtf(b * b - 4.0 * a * c)) / (2.0 * a);
 }
 
 void FilterFastAdaptiveContrast::apply(Image *image)
@@ -43,14 +44,14 @@ void FilterFastAdaptiveContrast::apply(Image *image)
     const unsigned int count = image->getWidth() * image->getHeight();
 
     auto pixels = new int[count];
-    auto avg = new int[count];
-    auto min = new int[count];
-    auto max = new int[count];
+    auto avg = new float[count];
+    auto min = new float[count];
+    auto max = new float[count];
     auto out = new int[count];
 
     Pixel pixel;
 
-    // Buscar por todos os pixels e copia para um vetor temporário
+    // Buscar por todos os pixels e copia para um vetor temporário, transformando em tons de cinza
     for (unsigned int x = 0; x < image->getWidth(); ++x)
     {
         for (unsigned y = 0; y < image->getHeight(); ++y)
@@ -77,7 +78,15 @@ void FilterFastAdaptiveContrast::apply(Image *image)
             auto neighbor = image->indexForPixel(x - 1, y);
 
             if (neighbor >= 0)
+            {
                 avg[current] = (1.0 - _c) * avg[current] + _c * avg[neighbor];
+
+                if (min[neighbor] < min[current])
+                    min[current] = (1.0 - _c) * min[current] + _c * min[neighbor];
+
+                if (max[neighbor] > max[current])
+                    max[current] = (1.0 - _c) * max[current] + _c * max[neighbor];
+            }
         }
     }
 
@@ -90,20 +99,9 @@ void FilterFastAdaptiveContrast::apply(Image *image)
             auto neighbor = image->indexForPixel(x, y - 1);
 
             if (neighbor >= 0)
-                avg[current] = (1.0 - _c) * avg[current] + _c * avg[neighbor];
-        }
-    }
-
-    // Calcula os mínimos e máximos
-    for (unsigned int x = 0; x < image->getWidth(); ++x)
-    {
-        for (unsigned y = 0; y < image->getHeight(); ++y)
-        {
-            auto current = image->indexForPixel(x, y);
-            auto neighbor = image->indexForPixel(x - 1, y);
-
-            if (neighbor >= 0)
             {
+                avg[current] = (1.0 - _c) * avg[current] + _c * avg[neighbor];
+
                 if (min[neighbor] < min[current])
                     min[current] = (1.0 - _c) * min[current] + _c * min[neighbor];
 
@@ -119,21 +117,29 @@ void FilterFastAdaptiveContrast::apply(Image *image)
         for (unsigned y = 0; y < image->getHeight(); ++y)
         {
             auto current = image->indexForPixel(x, y);
-            auto diff = max[current] - min[current];
-            auto w = abs(diff);
 
-            if (diff != 0 && w >= _w0 && min[current] <= pixels[current] && avg[current] <= max[current])
+            auto lmin = min[current];
+            auto lmax = max[current];
+
+            if (min[current] <= pixels[current] && avg[current] <= max[current])
             {
-                auto iNew = w * ((pixels[current] - min[current]) / diff);
-                auto aNew = w * ((avg[current] - min[current]) / diff);
+                auto diff = lmax - lmin;
+                auto w = diff;
 
+                if ((lmax - lmin) == 0)
+                    continue;
+
+                auto iNew = w * ((pixels[current] - lmin) / diff);
+                auto aNew = w * ((   avg[current] - lmin) / diff);
                 auto alpha = (aNew - iNew) / 128.0;
+
                 auto f = function(iNew, alpha, w);
-                auto result = min[current] + f;
+                auto result = lmin + f;
 
-                std::cout << "Alpha = " << alpha << std::endl;
+                if (std::isnan(f))
+                    continue;
 
-                out[current] = Math::clamp((int)result, 0, 255);
+                out[current] = Math::clamp(result, 0.0, 255.0);
             }
         }
     }

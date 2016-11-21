@@ -4,3 +4,4 @@ src/ipch/
 src/_UpgradeReport_Files/
 PDImagem.VC.db
 PDImagem.ncb
+build-*/
