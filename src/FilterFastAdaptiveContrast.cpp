@@ -32,6 +32,8 @@ bool FilterFastAdaptiveContrast::configure()
 
 float FilterFastAdaptiveContrast::function(int x, float alpha, int w)
 {
+    // Calcula o resultado da função de transferência
+
     auto a = alpha / (2.0 * w);
     auto b = (alpha / w) * x - alpha - 1.0;
     auto c = (alpha / (2.0 * w)) * x * x - alpha * x + x;
@@ -69,7 +71,7 @@ void FilterFastAdaptiveContrast::apply(Image *image)
         }
     }
 
-    // Calcula a média nas linhas
+    // Calcula as janelas locais (linhas)
     for (unsigned y = 0; y < image->getHeight(); ++y)
     {
         for (unsigned int x = 0; x < image->getWidth(); ++x)
@@ -90,7 +92,7 @@ void FilterFastAdaptiveContrast::apply(Image *image)
         }
     }
 
-    // Calcula a média nas colunas
+    // Calcula as janelas locais (colunas)
     for (unsigned int x = 0; x < image->getWidth(); ++x)
     {
         for (unsigned y = 0; y < image->getHeight(); ++y)
